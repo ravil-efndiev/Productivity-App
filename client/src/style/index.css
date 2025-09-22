@@ -1,0 +1,13 @@
+html, body {
+  background-color: #212121;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #ce93d8;
+}

@@ -1,10 +1,17 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
+import type { LoginRequestBody } from 'src/types';
 
 @Injectable()
 export class UsersService {
-    private users = ["raf", "ravus"]
-
-    getUsers() {
-        return this.users;
+  login(body: LoginRequestBody) {
+    console.log(`${body.username} ${body.password}`);
+    if (body.password.length < 5) {
+      throw new BadRequestException("Password too short");
     }
+    return {
+      user: {
+        username: body.username
+      }
+    };
+  }
 }

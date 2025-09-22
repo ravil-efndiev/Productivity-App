@@ -1,13 +1,13 @@
-import { Controller } from '@nestjs/common';
-import { Get } from '@nestjs/common';
+import { Get, Post, Body, Controller, BadRequestException } from '@nestjs/common';
 import { UsersService } from './users.service';
+import type { LoginRequestBody } from 'src/types';
 
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Get("getAll")
-  getAll() {
-    return this.usersService.getUsers();
+  @Post('login')
+  login(@Body() body: LoginRequestBody) {
+    return this.usersService.login(body);
   }
 }
