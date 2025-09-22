@@ -15,7 +15,7 @@ function FormInput({ label, value, type, required, onChange }: Props) {
       label={label} 
       value={value}
       type={type || "text"}
-      required={required || false}
+      required={required || true}
       onChange={onChange} 
       sx={{
         my: 1,
