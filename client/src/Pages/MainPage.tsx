@@ -1,8 +1,12 @@
+import { Box } from '@mui/material';
 import React from 'react'
+import { Sidebar } from '../Components/Sidebar';
 
 function MainPage() {
   return (
-    <div>MainPage</div>
+    <Box>
+      <Sidebar />
+    </Box>
   )
 }
 
